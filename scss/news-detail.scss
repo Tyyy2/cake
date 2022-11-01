@@ -1,0 +1,258 @@
+// -- Define variable --
+$grey-9: #dcdcdc;
+$grey-8: #c2c2c2;
+$grey-7: #969696;
+$grey-6: #7e7e7e;
+$grey-5: #555;
+$grey-3: #393939;
+$grey-2: #242424;
+$grey-1: #121212;
+$redwine: #901111;
+$logo_color: rgb(141, 215, 204);
+$darkgold: rgb(107, 78, 38);
+// -- End of variable --
+
+// -- animation
+@keyframes test {}
+
+// -- Define mixin --
+@mixin dimension($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+// width, height
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin flex-row($main, $sub) {
+  display: flex;
+  justify-content: $main;
+  align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin flex-col($main, $sub) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $main;
+  align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin image($uri) {
+  background-image: url($uri);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin transition($time, $dealy, $funtion) {
+  transition-duration: $time;
+  transition-delay: $delay;
+  transition-timing-function: $funtion;
+}
+
+@mixin background($bgcolor) {
+  background-color: $bgcolor;
+}
+
+// -- End of mixin --
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+main {
+  width: 100%;
+  @include flex-col(center, center);
+
+  .page-area {
+    width: 1100px;
+    margin-top: 40px;
+
+    li {
+      @include flex-row(flex-end, center);
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 400;
+
+      span {
+        padding: 0 11px;
+
+        a {
+          border-bottom: 2px solid transparent;
+          margin-top: 3px;
+
+          &:hover {
+            border-bottom: 2px solid black;
+            transition: 0.1s linear;
+          }
+        }
+      }
+    }
+  }
+
+  .phone_title {
+    li {
+      @include flex-row(center, center);
+      font-weight: 700;
+      margin: 118px 0 71px;
+
+      span {
+        letter-spacing: 10px;
+        padding: 18px 10px 18px 20px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .news-container {
+    @include dimension(1090px, auto);
+    padding: 40px 0 150px;
+    @include flex-col(center, center);
+
+    .news-header {
+      @include dimension(100%, auto);
+      @include flex-col(left, center);
+      border-bottom: 2px solid $logo_color;
+      margin-bottom: 67px;
+
+      .title {
+        @include dimension(100%, 100%);
+        @include flex-row(flex-start, center);
+        margin-bottom: 24px;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 2px;
+      }
+
+      .subtitle {
+        @include dimension(100%, 60px);
+        @include flex-row(flex-start, center);
+        padding-bottom: 39px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+
+    .news-banner {
+      @include dimension(962px, 600px);
+      @include flex-row(center, center);
+
+      img {
+        @include dimension(962px, 600px);
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .news-content {
+      @include dimension(962px, 225px);
+      margin: 127px auto 196px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  main {
+    .page-area {
+      width: 99%;
+      padding: 0 5%;
+
+      .page {
+        @include flex-row(center, center);
+      }
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  main {
+    .news-container {
+      width: 90%;
+
+      .news-banner {
+        img {
+          width: 100%;
+        }
+      }
+
+      .news-content {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    .news-container {
+      width: 90%;
+
+      .news-banner {
+        width: 80%;
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    main {
+      .page-area {
+        display: none;
+      }
+
+      .phone_title {
+        padding: 78px 0 46px;
+        li {
+          margin: 0;
+        }
+      }
+
+      .news-container {
+        padding: 0;
+        .news-header{
+          border: none;
+          margin: 0;
+          .title{
+            @include flex-row(center, center);
+            margin-bottom: 13px;
+            font-size: 16px;
+          }
+          .subtitle{
+            @include flex-row(center, center);
+            padding-bottom: 46px;
+            font-size: 12px;
+          }
+
+        }
+        .news-banner {
+          @include dimension(360px, 270px);
+
+          img {
+            @include dimension(100%, 100%);
+          }
+        }
+
+        .news-content {
+          @include dimension(307px, auto);
+          margin: 46px 0 77px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 25px;
+          .new-text-content {
+          }
+        }
+      }
+    }
+  }
+}

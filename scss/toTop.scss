@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
+@import url("./_/_mixin.scss");
+@import url("./_/_variable.scss");
+// -- Define variable --
+$grey-9: #dcdcdc;
+$grey-8: #c2c2c2;
+$grey-7: #969696;
+$grey-6: #7e7e7e;
+$grey-2: #242424;
+$grey-1: #121212;
+$primary: #8dd7cc;
+$secondary: #eeb8af;
+$redwine: #901111;
+$logo_color: rgb(141, 215, 204);
+$darkgold: rgb(107, 78, 38);
+
+// -- End of variable --
+// -- animation
+@keyframes test {
+}
+
+// -- Define mixin --
+@mixin dimension($w, $h) {
+	width: $w;
+	height: $h;
+}
+
+// width, height
+@mixin position-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+}
+
+@mixin flex-row($main, $sub) {
+	display: flex;
+	justify-content: $main;
+	align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin flex-col($main, $sub) {
+	display: flex;
+	flex-direction: column;
+	justify-content: $main;
+	align-items: $sub;
+}
+
+#back_to_top {
+  @include dimension(30px, 30px);
+  @include flex-row(center, center);
+  position: fixed;
+  right: 40px;
+  bottom: 92px;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid $primary;
+  border-radius: 50%;
+  background-color: #8dd7cc40;
+  transition: 0.3s;
+  z-index: 80;
+  i {
+      font-size: 18px;
+  }
+  &:hover {
+      background-color: $primary;
+  }
+}

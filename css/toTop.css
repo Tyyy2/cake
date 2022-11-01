@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
+@import url("./_/_mixin.scss");
+@import url("./_/_variable.scss");
+@keyframes test {}
+#back_to_top {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 40px;
+  bottom: 92px;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #8dd7cc;
+  border-radius: 50%;
+  background-color: rgba(141, 215, 204, 0.2509803922);
+  transition: 0.3s;
+  z-index: 80;
+}
+#back_to_top i {
+  font-size: 18px;
+}
+#back_to_top:hover {
+  background-color: #8dd7cc;
+}/*# sourceMappingURL=toTop.css.map */

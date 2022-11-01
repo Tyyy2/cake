@@ -1,0 +1,1227 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
+// -- Define variable --
+$grey-9: #dcdcdc;
+$grey-8: #c2c2c2;
+$grey-7: #969696;
+$grey-6: #7e7e7e;
+$grey-2: #242424;
+$grey-1: #121212;
+$primary: #8dd7cc;
+$secondary: #eeb8af;
+$redwine: #901111;
+$logo_color: rgb(141, 215, 204);
+$darkgold: rgb(107, 78, 38);
+// -- End of variable --
+
+// -- Define mixin --
+@mixin dimension($w, $h) {
+	width: $w;
+	height: $h;
+}
+
+// width, height
+@mixin position-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+}
+
+@mixin flex-row($main, $sub) {
+	display: flex;
+	justify-content: $main;
+	align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin flex-col($main, $sub) {
+	display: flex;
+	flex-direction: column;
+	justify-content: $main;
+	align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin image($uri) {
+	background-image: url($uri);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@mixin keyframe($animation_name, $animation_duration, $animation_count, $animation_time_function) {
+	animation-name: $animation_name;
+	animation-duration: $animation_duration;
+	animation-iteration-count: $animation_count;
+	animation-timing-function: $animation_time_function;
+}
+
+@mixin transition($transition_time, $transition_delay, $transition_funtion) {
+	transition-duration: $transition_time;
+	transition-delay: $transition_delay;
+	transition-timing-function: $transition_funtion;
+}
+
+@mixin background($bgcolor) {
+	background-color: $bgcolor;
+}
+
+@mixin font($size, $weight, $family, $color) {
+	font-size: $size;
+	font-weight: $weight;
+	font-family: $family;
+	color: $color;
+}
+
+// -- End of mixin --
+
+//---keyframe
+
+@keyframes img-rotate {
+	0% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0px);
+	}
+
+	100% {
+		transform: translateX(-1950px);
+	}
+}
+
+//---end of keyframe
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Noto Sans TC", sans-serif;
+}
+
+html {
+	::-webkit-scrollbar {
+		width: 0px;
+	}
+
+	scroll-behavior: smooth;
+}
+
+body {
+	@include dimension(100%, auto);
+	position: relative;
+	font-family: "Noto Serif TC";
+}
+
+header {
+	@include dimension(100%, 70px);
+	position: relative;
+	top: 0;
+	border-top: 7px solid $logo_color;
+	background-color: white;
+	z-index: 100;
+	transition: 0.2s ease-out;
+
+	nav {
+		@include flex-row(flex-end, center);
+		position: relative;
+		max-width: 1440px;
+		height: 100%;
+		margin: auto;
+		background-color: white;
+
+		.nav-logo {
+			@include flex-row(center, center);
+			height: 102px;
+			width: 102px;
+			// background-color: gray;
+			@include image("../img/NAV/Logo/logo-bg-white.png");
+			position: absolute;
+			top: 15px;
+			left: 0;
+			border-radius: 50%;
+			z-index: 5;
+			scale: 1;
+			transition: 0.2s ease-out;
+		}
+
+		.nav-btns {
+			@include flex-row(flex-end, center);
+			position: relative;
+			height: 100%;
+			flex: 1;
+			padding: 0 28px;
+			background-color: white;
+
+			a {
+				ul {
+					li {
+						@include flex-row(center, center);
+					}
+				}
+			}
+
+			a + a {
+				margin-left: 12px;
+			}
+
+			.nav-style {
+				@include flex-row(center, center);
+				position: relative;
+				padding: 4px 8px;
+				text-decoration: none;
+				color: black;
+				font-weight: 400;
+				font-size: 18px;
+				border-radius: 8px;
+				letter-spacing: 1px;
+				transition: 0.2s;
+				z-index: 2;
+
+				&:hover {
+					outline: 3px solid $primary;
+				}
+
+				&#order .order-menu {
+					width: 100%;
+					position: absolute;
+					top: 100%;
+					list-style: none;
+					display: none;
+					line-height: 40px;
+					border: 1px black solid;
+					background-color: #eee;
+					// transform: translateY(-50%);
+				}
+
+				&#order:hover .order-menu {
+					display: block;
+					width: 100%;
+
+					& li:hover {
+						background-color: #000;
+						color: #eee;
+					}
+				}
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				right: 0;
+				height: 36px;
+				border-right: 2px solid $grey-2;
+			}
+		}
+
+		.social-media-area {
+			@include flex-row(center, center);
+			position: relative;
+			padding: 0 16px 0 32px;
+			background-color: white;
+
+			a + a {
+				margin-left: 12px;
+			}
+
+			.social-style {
+				width: 44px;
+				height: 44px;
+			}
+
+			#facebook {
+				@include dimension(40px, 40px);
+				@include image("../img/NAV/社群/FB.png");
+				transition: 0.4s ease;
+				scale: 1;
+
+				&:hover {
+					scale: 1.15;
+				}
+			}
+
+			#instagram {
+				@include dimension(38px, 38px);
+				@include image("../img/NAV/社群/IG.png");
+				background-size: contain;
+				transition: 0.4s ease;
+				scale: 1;
+
+				&:hover {
+					scale: 1.15;
+				}
+			}
+		}
+	}
+
+	.ham-icon,
+	#toggle_menu {
+		display: none;
+	}
+
+	.pagination {
+		@include dimension(100%, 40px);
+		@include flex-row(flex-end, center);
+		position: absolute;
+		// top: 100%;
+
+		.content {
+			@include flex-row(space-around, center);
+			@include dimension(calc(50% + 720px - 51px), 100%);
+			padding: 0 10%;
+			background-color: rgba(141, 215, 204, 0.6);
+			z-index: 1;
+
+			a {
+				color: black;
+				text-decoration: none;
+				transition: 0.25s ease;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	// End of pagination
+}
+
+// End of header
+
+main {
+	position: relative;
+	width: 100%;
+
+	.banner {
+		@include dimension(100%, 771px);
+		@include flex-row(center, center);
+		@include image("../img/index/banner_img.jfif");
+		position: relative;
+	}
+
+	.product-showcase {
+		@include dimension(100%, 771px);
+		@include flex-row(center, center);
+		position: relative;
+		font-family: "Noto Serif TC";
+		font-size: 3rem;
+		overflow: hidden;
+
+		.see-through-style {
+			@include dimension(100px, 100px);
+			border-radius: 50%;
+			// border: yellow 5px solid;
+			position: absolute;
+			.mask {
+				@include dimension(80px, 80px);
+				@include position-center();
+				z-index: 5;
+			}
+			img {
+				@include dimension(100%, 100%);
+			}
+
+			// &:hover {
+			// 	@include transition(0s, 0s, linear);
+			// 	transform: scale(1.5);
+			// }
+		}
+		@media screen and (max-width: 720px) {
+			.see-through-style {
+				display: none;
+			}
+			.dash-line {
+				display: none;
+			}
+		}
+
+		.see-through1 {
+			background-color: $grey-7;
+			top: 223px;
+			left: 170px;
+			.mask {
+				@include image("../img/index/icons8-lemon.png");
+			}
+		}
+		.dash-line1 {
+			position: absolute;
+			top: 296px;
+			left: 250px;
+		}
+
+		.see-through2 {
+			background-color: $grey-7;
+			top: 89px;
+			left: 667px;
+			.mask {
+				@include image("../img/index/icons8-marshmallow.png");
+			}
+		}
+		.dash-line2 {
+			position: absolute;
+			top: 172px;
+			left: 543px;
+		}
+
+		.see-through3 {
+			background-color: $grey-7;
+			top: 369px;
+			left: 733px;
+			.mask {
+				@include image("../img/index/Cookie.png");
+			}
+		}
+		.dash-line3 {
+			position: absolute;
+			top: 347px;
+			left: 659px;
+		}
+
+		.profile {
+			@include dimension(621px, auto);
+			position: absolute;
+			top: 219px;
+			left: 184px;
+			img {
+				@include dimension(100%, auto);
+				object-fit: contain;
+			}
+		}
+		@media screen and (max-width: 720px) {
+			.profile {
+				display: none;
+			}
+		}
+
+		.description {
+			width: 600px;
+			position: absolute;
+			top: 532px;
+			left: 200px;
+			display: flex;
+			justify-content: space-between;
+			// background-color: $grey-7;
+			z-index: 50;
+
+			.title {
+				@include dimension(100%, 100%);
+				position: relative;
+				// padding-top: 48px;
+
+				.text {
+					width: 100%;
+					position: absolute;
+					top: 76px;
+					left: 145px;
+					@include font(24px, bold, "Noto Serif TC", black);
+					letter-spacing: 5px;
+				}
+
+				.bg {
+					// @include dimension(auto, 100%);
+					@include font(70px, none, "Noto Serif TC", transparent);
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 3;
+					-webkit-text-stroke: 1px black;
+					letter-spacing: 0.3em;
+				}
+
+				p {
+					@include dimension(488px, 79px);
+					font-size: 16px;
+					position: absolute;
+					top: 120px;
+					left: 171px;
+					z-index: 1;
+				}
+			}
+		}
+		@media screen and (max-width: 720px) {
+			.description {
+				top: 0;
+				left: 20px;
+				.title {
+					.text {
+						top: 187px;
+						left: 53px;
+						font-size: 18px;
+					}
+					.bg {
+						top: 166px;
+						left: 24px;
+						-webkit-text-stroke: 0px black;
+						color: $secondary;
+						font-size: 32px;
+						font-weight: 700;
+						letter-spacing: 0.3em;
+						// font-weight: 700;
+					}
+					p {
+						@include dimension(192px, auto);
+						top: 342px;
+						left: 44px;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+
+		.rotate-img {
+			@include dimension(609px, 609px);
+			@include keyframe(img-rotate, 10s, infinite, linear);
+			@include image("../img/index/檸檬塔去背.png");
+			position: absolute;
+			top: 50%;
+			right: 100px;
+			translate: 0 -50%;
+			border-radius: 50%;
+			// background-color: $grey-8;
+			z-index: 10;
+		}
+		@media screen and (min-width: 1241px) and (max-width: 1440px) {
+			.rotate-img {
+				right: 0;
+				translate: 50% -50%;
+			}
+		}
+		@media screen and (min-width: 721px) and (max-width: 1240px) {
+			.rotate-img {
+				@include dimension(500px, 500px);
+				position: absolute;
+				top: 100%;
+				right: -191px;
+				translate: 0 -50%;
+			}
+		}
+		@media screen and (max-width: 720px) {
+			.rotate-img {
+				@include dimension(383px, 383px);
+				position: absolute;
+				top: 50%;
+				right: -191px;
+				translate: 0 -50%;
+				// border-radius: 50%;
+				// background-color: $grey-8;
+			}
+		}
+	}
+	@media screen and (max-width: 720px) {
+		.product-showcase {
+			@include dimension(100%, 509px);
+		}
+	}
+
+	.new-product {
+		@include dimension(100%, 624px);
+		@include flex-row(flex-start, center);
+		position: relative;
+		color: $darkgold;
+		font-family: "Noto Serif TC";
+		font-size: 3rem;
+		background-color: $logo_color;
+
+		img {
+			@include dimension(1034px, 624px);
+			object-fit: cover;
+			background-color: $logo_color;
+		}
+
+		.text {
+			@include dimension(calc(100% - 1034px), 100%);
+			@include flex-col(center, flex-start);
+			background-color: $logo_color;
+
+			.title {
+				@include dimension(385px, 70px);
+				@include flex-row(flex-start, flex-end);
+				padding-left: 59px;
+				position: relative;
+
+				.inner-text {
+					@include font(24px, bold, "Noto Serif TC", black);
+					position: absolute;
+					left: 84px;
+					letter-spacing: 5px;
+					z-index: 1;
+				}
+
+				.bg {
+					@include dimension(403px, 118px);
+					@include flex-row(flex-start, flex-end);
+					position: absolute;
+					left: 59px;
+					-webkit-text-stroke: 1px black;
+					color: transparent;
+					font-size: 70px;
+					font-weight: 700;
+					font-family: "Noto Serif TC", sans-serif;
+					letter-spacing: 0.3em;
+					z-index: 0;
+				}
+			}
+
+			p {
+				@include dimension(399px, 128px);
+				position: absolute;
+				top: 351px;
+				left: 84px;
+				font-size: 16px;
+				color: black;
+			}
+
+			button {
+				transform: translateX(84px);
+				margin-top: 100px;
+				padding: 12px 18px;
+				@include font(16px, bold, "Noto Serif TC", black);
+				border: none;
+				border-radius: 8px;
+				background-color: white;
+				box-shadow: gray 0px 3px 5px;
+				transition: 0.3s;
+				cursor: pointer;
+
+				&:hover {
+					outline: 4px solid $primary;
+				}
+			}
+			@media screen and (max-width: 720px) {
+				button {
+					display: none;
+				}
+			}
+		}
+	}
+	@media screen and (min-width: 721px) and (max-width: 1240px) {
+		.new-product {
+			img {
+				@include dimension(100%, 100%);
+				object-fit: cover;
+				object-position: center;
+			}
+			.text {
+				@include dimension(100%, 100%);
+				@include flex-col(flex-start, center);
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: transparent;
+				background-image: linear-gradient(90deg, transparent, #fff);
+				z-index: 5;
+				.title {
+					@include dimension(380px, 44px);
+					position: absolute;
+					top: 0;
+					left: 50%;
+					.inner-text {
+						top: 296px;
+						left: 53px;
+						color: #000;
+					}
+					.bg {
+						@include dimension(100%, auto);
+						top: 247px;
+						left: 24px;
+						-webkit-text-stroke: 1px #000;
+						color: #fff;
+						font-family: "Noto Serif TC";
+						font-weight: 700;
+					}
+				}
+				p {
+					@include dimension(320px, auto);
+					position: absolute;
+					top: 357px;
+					left: 50%;
+					padding: 0 45px;
+					color: #000;
+					font-size: 14px;
+				}
+				.more-info {
+					position: absolute;
+					top: 60%;
+					left: 70%;
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 720px) {
+		.new-product {
+			@include dimension(100%, 451px);
+			img {
+				@include dimension(100%, 100%);
+				object-fit: cover;
+				object-position: center;
+			}
+			.text {
+				@include dimension(100%, 200px);
+				@include flex-col(flex-start, center);
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: transparent;
+				z-index: 5;
+				.title {
+					@include dimension(100%, 44px);
+					position: absolute;
+					top: 0;
+					left: 0;
+					.inner-text {
+						top: 296px;
+						left: 53px;
+						color: #fff;
+						font-size: 18px;
+					}
+					.bg {
+						@include dimension(auto, auto);
+						top: 247px;
+						left: 24px;
+						-webkit-text-stroke-width: 0px;
+						color: #fff;
+						font-size: 32px;
+						font-family: "Noto Serif TC";
+						font-weight: 700;
+					}
+				}
+				p {
+					@include dimension(300px, auto);
+					position: absolute;
+					top: 357px;
+					left: 45px;
+					color: #fff;
+					font-size: 14px;
+				}
+				.more-info {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.product-series {
+		@include dimension(100%, auto);
+		// @include flex-row(center, center);
+		color: $darkgold;
+		font-family: "Noto Serif TC";
+		font-size: 3rem;
+		// background-color: $grey-9;
+
+		.marquee-area {
+			width: 100%;
+			overflow: hidden;
+
+			.marquee-text {
+				@include font(96px, bold, none, black);
+				@include keyframe(marquee, 5s, infinite, linear);
+				@include dimension(650px, 96px);
+				// background-color: gray;
+				letter-spacing: 20px;
+
+				&::before {
+					content: "PRODUCT.PRODUCT.PRODUCT.";
+				}
+
+				&::after {
+					content: "PRODUCT.PRODUCT.";
+				}
+			}
+		}
+
+		.swiper-area {
+			@include dimension(100%, auto);
+			padding: 145px 0 126px;
+			position: relative;
+			display: flex;
+			align-items: center;
+			overflow: hidden;
+
+			.swiper {
+				@include dimension(100%, auto);
+				padding: 0;
+				.swiper-wrapper {
+					position: relative;
+					left: 50%;
+					translate: -144px 0;
+					.swiper-slide {
+						@include dimension(289px, auto);
+						@include flex-col(start, center);
+
+						.swiper-product-img {
+							@include dimension(289px, 289px);
+							// padding-bottom: 47px;
+
+							img {
+								@include dimension(100%, 100%);
+								object-fit: cover;
+								object-position: center;
+							}
+							.more-product {
+								@include dimension(289px, 289px);
+								@include flex-row(center, center);
+								position: absolute;
+								top: 0;
+								text-decoration: none;
+								color: #000;
+								font-size: 18px;
+								background-color: rgba($color: #fff, $alpha: 0.6);
+								z-index: 5;
+							}
+						}
+
+						.swiper-product-name {
+							@include font(18px, none, "Noto Sans TC", black);
+							padding-top: 48px;
+							letter-spacing: 0.2rem;
+						}
+					}
+				}
+				.right-arrow {
+					@include dimension(40px, 300px);
+					@include flex-row(center, center);
+					position: absolute;
+					top: 0px;
+					right: 0px;
+					color: #000;
+					font-size: 28px;
+					background-image: linear-gradient(90deg, transparent, #fff);
+					display: none;
+					z-index: 20;
+					i {
+						@include position-center();
+					}
+				}
+				@media screen and (max-width: 720px) {
+					.right-arrow {
+						display: block;
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 720px) {
+			.swiper-area {
+				padding: 80px 0 60px;
+				.swiper {
+					.swiper-wrapper {
+						position: relative;
+						left: 50%;
+						translate: -150px 0;
+						.swiper-slide {
+							@include dimension(300px, auto);
+							@include flex-col(start, center);
+
+							.swiper-product-img {
+								@include dimension(300px, 300px);
+								.more-product {
+									@include dimension(300px, 300px);
+								}
+							}
+
+							.swiper-product-name {
+								@include font(16px, 400, "Noto Sans TC", black);
+								padding-top: 36px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// End of main
+
+footer {
+	@include dimension(100%, 426px);
+	@include flex-col(center, center);
+	background-color: $logo_color;
+	color: $darkgold;
+
+	.footer-box {
+		width: 80%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		.information {
+			@include flex-row(center, center);
+
+			.information_box {
+				width: 350px;
+				font-size: 14px;
+
+				.footer-title {
+					list-style: none;
+					img {
+						@include dimension(261px, 87px);
+					}
+				}
+
+				.text {
+					padding: 20px 10px;
+					color: #fff;
+
+					li {
+						font-size: 14px;
+						line-height: 17px;
+						list-style: none;
+
+						i {
+							padding-right: 8px;
+						}
+					}
+
+					li:nth-last-of-type(1) {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.map {
+			@include flex-row(center, center);
+
+			iframe {
+				@include dimension(554px, 236px);
+				border: 0;
+				border-radius: 40px;
+				padding: 10px;
+			}
+		}
+	}
+
+	.copy-right {
+		@include dimension(350px, 15px);
+		@include flex-row(center, center);
+		transform: translate(0, 250%);
+		color: white;
+		font-size: 10px;
+		font-family: 'Noto Sans TC';
+		letter-spacing: 1px;
+	}
+}
+@media (max-width: 1024px) {
+	header {
+		nav {
+			.nav-btns {
+				.nav-style {
+					padding: 4px 5px;
+				}
+			}
+		}
+	}
+
+	footer {
+		justify-content: flex-start;
+		@include dimension(100%, 236px);
+		.footer-box {
+			width: 70%;
+			@include flex-row(center, center);
+			margin-top: 21px;
+			.information {
+				@include flex-col(center, center);
+
+				.information_box {
+					@include flex-col(center, center);
+
+					.footer-title {
+						img {
+							@include dimension(166px, 49px);
+						}
+					}
+
+					.text {
+						@include flex-col(center, center);
+						li {
+							font-weight: 400;
+							font-size: 12px;
+							line-height: 15px;
+							color: $grey-1;
+							a {
+								text-decoration: none;
+								color: #000;
+							}
+						}
+
+						li:nth-of-type(1) {
+							i {
+								display: none;
+							}
+						}
+						li:nth-of-type(2) {
+							i {
+								display: none;
+							}
+						}
+						li:nth-of-type(3) {
+							span {
+								display: none;
+							}
+						}
+
+						li:nth-last-of-type(1) {
+							display: block;
+						}
+					}
+				}
+			}
+
+			.map,
+			.map iframe {
+				display: none !important;
+			}
+			border-bottom: 1px solid $grey-1;
+		}
+
+		.copy-right {
+			transform: translate(0, 0);
+			margin: 20px 0 17px;
+			color: $grey-1;
+		}
+	}
+}
+
+// Media Query
+
+// --1600px 防止文字爆版
+@media screen and(min-width:1241px) and (max-width: 1600px) {
+	main {
+
+		.new-product {
+			img {
+				@include dimension(60%, 624px);
+			}
+		}
+		.text {
+			@include dimension(40%, 624px);
+		}
+	}
+}
+
+// --End of 1600px
+
+// --1440px
+@media screen and(min-width:1241px) and (max-width: 1440px) {
+	header {
+		nav {
+			padding: 0 20px;
+			@include dimension(calc(100% - 50px), 100%);
+
+			.nav-logo {
+				left: 50px;
+			}
+		}
+		.pagination {
+			.content {
+				@include flex-row(space-around, center);
+				@include dimension(calc(100% - 121px), 100%);
+				padding: 0 10%;
+				background-color: rgba(141, 215, 204, 0.6);
+				z-index: 1;
+
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	main {
+		// 
+	}
+}
+
+// -- End of 1440px
+
+//-- 1240px
+@media screen and(min-width:780px) and (max-width: 1240px) {
+	header {
+		nav {
+			padding: 0 20px;
+			@include dimension(calc(100% - 30px), 100%);
+
+			.nav-logo {
+				left: 30px;
+			}
+		}
+		.pagination {
+			.content {
+				@include flex-row(space-around, center);
+				@include dimension(calc(100% - 131px), 100%);
+				padding: 0 10%;
+				background-color: rgba(141, 215, 204, 0.6);
+				z-index: 1;
+
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+//--End of 1240px
+
+// -- 720px
+@media screen and (max-width: 720px) {
+	header {
+		position: relative;
+
+		nav {
+			padding: 0 20px;
+
+			.nav-logo {
+				@include dimension(70px, 70px);
+				position: absolute;
+				top: 19px;
+				left: 50%;
+				translate: -50% 0;
+			}
+
+			.nav-btns,
+			.social-media-area {
+				display: none;
+			}
+		}
+
+		.ham-icon {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			padding: 0 15px 0;
+			transform: translateY(-50%);
+			display: block;
+			font-size: 3rem;
+			z-index: 1;
+			cursor: pointer;
+
+			svg {
+				@include dimension(35px, 35px);
+				.st0 {
+					fill: none;
+					stroke: #9ccec5;
+					stroke-width: 10;
+					stroke-miterlimit: 10;
+				}
+			}
+		}
+
+		#ham_icon:checked ~ #toggle_menu {
+			@include dimension(100%, 100vh);
+			z-index: 100;
+			.wrap {
+				.toggle-menu-content {
+					img {
+						scale: 1;
+					}
+				}
+				.close-icon {
+					@include dimension(80px, 100vh);
+					@include flex-row(flex-start, center);
+					background-color: #8dd7cc;
+				}
+			}
+		}
+		//
+		#toggle_menu {
+			@include dimension(0, 100vh);
+			@include transition(0.4s, 0s, ease-out);
+			position: fixed;
+			top: 0;
+			right: -100vw;
+			display: block;
+			background-color: white;
+			translate: -100% 0;
+			z-index: 5;
+			.wrap {
+				display: flex;
+				.toggle-menu-content {
+					@include dimension(calc(100% - 80px), 100vh);
+					@include flex-col(center, center);
+					img {
+						@include dimension(130px, 130px);
+						object-fit: contain;
+						scale: 0;
+					}
+					.nav-links {
+						@include flex-col(center, center);
+						padding: 70px 0;
+						a + a {
+							padding-top: 35px;
+						}
+						a {
+							color: #000;
+							font-size: 20px;
+							font-family: "Noto Sans TC";
+							text-decoration: none;
+						}
+					}
+					.follow-us {
+						padding: 15px 0 20px;
+						font-size: 16px;
+						font-family: "Noto Sans TC";
+					}
+					.ssn {
+						@include dimension(102px, 42px);
+						@include flex-row(space-between, center);
+						.facebook,
+						.instagram {
+							color: $primary;
+							transition: 0.4s ease;
+							scale: 1;
+						}
+						.facebook {
+							font-size: 42px;
+						}
+
+						.instagram {
+							font-size: 42px;
+						}
+					}
+				}
+				.close-icon {
+					@include dimension(80px, 100vh);
+					@include flex-row(center, center);
+					background-color: #8dd7cc;
+					i {
+						font-size: 30px;
+						padding-left: 25px;
+					}
+				}
+			}
+		}
+
+		.pagination {
+			display: none !important;
+
+			.content {
+				width: 100%;
+				color: white;
+			}
+		}
+	}
+}
+
+// -- End of 720px
+
+// addition style
+.header-hide {
+	position: fixed !important;
+	top: -70px;
+}
+.header-show {
+	position: fixed !important;
+	top: 0px;
+}
+.logo-hide {
+	scale: 0 !important;
+}
+.pagination-span {
+	width: 100% !important;
+}

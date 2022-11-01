@@ -1,0 +1,80 @@
+#loading {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #8dd7cc;
+  animation: 1s linear 3s fade-out;
+}
+#loading :is(#img_bg, #img_logo, #img_logo_done) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 400px;
+  height: 400px;
+}
+@media screen and (max-width: 720px) {
+  #loading :is(#img_bg, #img_logo, #img_logo_done) {
+    width: 250px;
+    height: 250px;
+  }
+}
+#loading #img_bg {
+  animation: 2s cubic-bezier(.14,.8,.64,1.01) rotate, 2s linear 2s stop;
+}
+#loading #img_logo_done {
+  scale: 0;
+  animation: .75s cubic-bezier(.45,.5,.44,1.75) 2s pop-up, 1.25s linear 2.75s pop-stop;
+}
+
+/* View Style */
+.off {
+  display: none !important;
+}
+
+/* Animations */
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 180deg;
+  }
+}
+@keyframes stop {
+  0%,
+  100% {
+    rotate: 180deg;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes pop-up {
+  0% {
+    scale: 0;
+    opacity: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+@keyframes pop-stop {
+  0%, 100% {
+    scale: 1;
+    opacity: 1;
+  }
+}

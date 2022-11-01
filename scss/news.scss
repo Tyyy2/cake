@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// -- Define variable --
+$grey-9: #dcdcdc;
+$grey-8: #c2c2c2;
+$grey-7: #969696;
+$grey-6: #7e7e7e;
+$grey-5: #555;
+$grey-3: #393939;
+$grey-2: #242424;
+$grey-1: #121212;
+$redwine: #901111;
+$logo_color: rgb(141, 215, 204);
+$darkgold: rgb(107, 78, 38);
+// -- End of variable --
+
+// -- animation
+@keyframes test {}
+
+
+// -- Define mixin --
+@mixin dimension($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+// width, height 
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin flex-row($main, $sub) {
+  display: flex;
+  justify-content: $main;
+  align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin flex-col($main, $sub) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $main;
+  align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin image($uri) {
+  background-image: url($uri);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin keyframe($animation_name, $animation_duration, $animation_count, $animation_time_function) {
+  animation-name: $animation_name;
+  animation-duration: $animation_duration;
+  animation-iteration-count: $animation_count;
+  animation-timing-function: $animation_time_function;
+}
+
+@mixin transition($transition_time, $transition_delay, $transition_funtion) {
+  transition-duration: $transition_time;
+  transition-delay: $transition_delay;
+  transition-timing-function: $transition_funtion;
+
+}
+
+@mixin background($bgcolor) {
+  background-color: $bgcolor;
+}
+
+
+@mixin font($size, $weight, $family, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $family;
+  color: $color;
+}
+
+
+// -- End of mixin --
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+main {
+  @include flex-col(center, center);
+  width: 100%;
+  position: relative;
+
+  .page-area {
+    width: 1100px;
+    margin-top: 40px;
+
+    li {
+      @include flex-row(flex-end, center);
+      // background-color: $grey-7;
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 400;
+      * {
+        font-family: 'Noto Sans TC';
+      }
+      
+      span {
+        padding: 0 11px;
+
+        a {
+          border-bottom: 2px solid transparent;
+          margin-top: 3px;
+
+          // color: black;
+          &:hover {
+            border-bottom: solid black;
+            transition: 0.1s linear;
+          }
+        }
+      }
+    }
+  }
+
+  .phone_title {
+    li {
+      @include flex-row(center, center);
+      font-weight: 700;
+      padding: 118px 0 49px;
+
+      span {
+        letter-spacing: 10px;
+        padding: 18px 10px 18px 20px;
+        font-size: 24px;
+      }
+    }
+  }
+
+
+  .news-container {
+    @include dimension(1090px, 100%);
+    margin: 91px auto 221px;
+
+    .news-card {
+      @include dimension(100%, 402px);
+      @include flex-row(center, flex-start);
+      border: 2px solid $logo_color;
+
+      & + .news-card {
+        margin-top: 150px;
+      }
+
+      .news-info {
+        @include dimension(555px, 402px);
+
+        .news-date {
+          @include dimension(95px, 50px);
+          @include flex-row(center, center);
+          background-color: $logo_color;
+          transform: translate(50%, 0);
+        }
+
+        .news-text {
+          @include dimension(453px, 155px);
+          margin: 90px 0 22px 10%;
+
+
+          .news-text-title {
+            @include dimension(80%, 20px);
+            margin-bottom: 32px;
+            font-size: 18px;
+            line-height: 22px;
+            font-weight: 600;
+          }
+
+          .new-text-content {
+            @include dimension(440px, 94px);
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 400;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        .news-date-duration-box {
+          @include flex-row(space-between, center);
+          padding: 30px 10%;
+          @include dimension(100%, 17px);
+
+          .news-date-duration {
+            @include dimension(160px, 17px);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+          }
+
+          .news-btn-area {
+            @include dimension(45%, 17px);
+            @include flex-row(flex-end, center);
+            border-radius: 10px;
+            color: $logo_color;
+            padding-right: 10px;
+
+            a {
+              width: 80px;
+              &:hover {
+                transform: translateX(2em);
+                @include transition(0.5s, 0s, linear);
+              }
+              span {
+                width: 300px;
+                font-size: 30px;
+              }
+            }
+
+          }
+        }
+      }
+
+      .news-img {
+        @include dimension(535px, 398px);
+
+        img {
+          @include dimension(100%, 100%);
+          object-fit: cover;
+          object-position: center;
+        }
+
+        .news-img-date {
+          opacity: 0;
+          @include dimension(95px, 50px);
+          background-color: $logo_color;
+          @include flex-row(center, center);
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+@media (max-width: 1280px) {
+  main {
+    .page-area {
+      width: 99%;
+      padding: 0 5%;
+
+      .page {
+        @include flex-row(center, center);
+      }
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  main {
+
+    .news-container {
+      @include dimension(90%, 100%);
+
+      .news-card {
+        .news-info {
+          width: 50%;
+
+          .news-text {
+            @include dimension(90%, 155px);
+
+            .new-text-content {
+              width: 90%;
+            }
+          }
+        }
+
+        .news-img {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 720px) {
+  main {
+    .page-area {
+      display: none;
+    }
+
+    .phone_title {
+      padding: 78px 0 43px;
+    }
+
+    .news-container {
+      @include flex-col(flex-start, center);
+      @include dimension(100%, auto);
+      margin: 0;
+      padding-bottom: 78px;
+
+      .news-card {
+        @include dimension(360px, 450px);
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        & + .news-card {
+          margin-top: 50px;
+        }
+
+        .news-info {
+          @include dimension(90%, 180px);
+
+          .news-date {
+            opacity: 0;
+          }
+
+          .news-text {
+            margin: 23px 0 23px 30px;
+            transform: translateY(-35%);
+
+            .news-text-title {
+              height: 20px;
+              margin-bottom: 23px;
+              font-size: 16px;
+              line-height: 20px;
+            }
+
+            .new-text-content {
+              @include dimension(95%, 61px);
+              font-size: 14px;
+              -webkit-line-clamp: 3;
+            }
+          }
+
+          .news-date-duration-box {
+            @include dimension(95%, 17px);
+            transform: translateY(-300%);
+            padding: 11px 0px 26px 30px;
+          }
+        }
+
+        .news-img {
+          width: 100%;
+          height: 270px;
+          position: relative;
+
+          img {
+            height: 270px;
+          }
+
+          .news-img-date {
+            opacity: 1;
+            position: absolute;
+            top: 0;
+            left: 10%;
+          }
+        }
+      }
+    }
+  }
+}

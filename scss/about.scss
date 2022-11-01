@@ -1,0 +1,631 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// -- Define variable --
+$grey-9: #dcdcdc;
+$grey-8: #c2c2c2;
+$grey-7: #969696;
+$grey-6: #7e7e7e;
+$grey-2: #242424;
+$grey-1: #121212;
+$redwine: #901111;
+$primary: #8dd7cc;
+$secondary: #eeb8af;
+$logo_color: rgb(141, 215, 204);
+$darkgold: rgb(107, 78, 38);
+
+// -- End of variable --
+
+//---keyframe
+
+@keyframes rotate {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    25% {
+        transform: rotate(270deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+//---end of keyframe
+
+// -- Define mixin --
+@mixin dimension($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+// width, height
+@mixin position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+@mixin flex-row($main, $sub) {
+    display: flex;
+    justify-content: $main;
+    align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin flex-col($main, $sub) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $main;
+    align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin image($uri) {
+    background-image: url($uri);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin keyframe($animation_name, $animation_duration, $animation_count, $animation_time_function) {
+    animation-name: $animation_name;
+    animation-duration: $animation_duration;
+    animation-iteration-count: $animation_count;
+    animation-timing-function: $animation_time_function;
+}
+
+@mixin transition($transition_time, $transition_delay, $transition_funtion) {
+    transition-duration: $transition_time;
+    transition-delay: $transition_delay;
+    transition-timing-function: $transition_funtion;
+}
+
+@mixin background($bgcolor) {
+    background-color: $bgcolor;
+}
+
+@mixin font($size, $weight, $family, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+    color: $color;
+}
+
+@mixin setobject() {
+    object-fit: cover;
+    object-position: center;
+}
+
+// -- End of mixin --
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC';
+}
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+main {
+    width: 100%;
+    position: relative;
+    @include flex-col(center, center);
+
+    .page-area {
+        width: 1100px;
+        margin-top: 40px;
+
+        li {
+            @include flex-row(flex-end, center);
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 400;
+
+            span {
+                padding: 0 11px;
+
+                a {
+                    border-bottom: 2px solid transparent;
+                    margin-top: 3px;
+
+                    &:hover {
+                        border-bottom: solid black;
+                        transition: 0.1s linear;
+                    }
+                }
+            }
+        }
+    }
+
+    .phone_title {
+        display: none;
+
+        li {
+            @include flex-row(center, center);
+            font-weight: 700;
+            margin: 78px 0 112px;
+            opacity: 0;
+            
+            span {
+                padding: 18px 10px 18px 20px;
+                font-size: 18px;
+                font-family: 'Noto Serif TC';
+                letter-spacing: 10px;
+            }
+        }
+    }
+
+    .logo-area {
+        @include dimension(100%, auto);
+        @include flex-row(center, center);
+        padding: 148px 0;
+
+        .logo {
+            @include dimension(900px, 126px);
+            @include flex-row(space-around, center);
+            color: $darkgold;
+
+            .logo-img {
+                @include flex-row(center, center);
+                img{
+                    @include dimension(434px, 126px);
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .logo-text {
+                @include dimension(330px, 120px);
+                color: $grey-1;
+                @include flex-col(center, flex-start);
+                line-height: 30px;
+                font-size: 20px;
+                letter-spacing: 0.1em;
+            }
+        }
+    }
+
+    .banner-area {
+        @include dimension(1190px, 505px);
+        @include flex-row(center, center);
+        margin-bottom: 120px;
+
+        img {
+            @include dimension(1190px, 505px);
+            @include flex-row(center, center);
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .slogan-area {
+        @include dimension(100%, 613px);
+        @include flex-row(center, center);
+        position: relative;
+        padding: 120px 0;
+        * {
+            font-family: 'Noto Serif TC';
+        }
+
+        ul {
+            position: absolute;
+
+            p {
+                line-height: 24px;
+                font-size: 24px;
+                padding: 6px 0;
+                font-weight: 700;
+            }
+
+            p:nth-last-of-type(2) {
+                span {
+                    color: #eeb8af;
+                    // -webkit-text-stroke: 1px #a25042;
+                }
+            }
+
+            p:nth-last-of-type(1) {
+                span:nth-last-of-type(2) {
+                    color: #eeb8af;
+                    // -webkit-text-stroke: 1px #a25042;
+                }
+
+                span:nth-last-of-type(1) {
+                    color: $logo_color;
+                    // -webkit-text-stroke: 1px #358176;
+                }
+            }
+        }
+
+        .slogan-oval1 {
+            @include dimension(646px, 235px);
+            @include flex-row(center, center);
+            border: 1px solid black;
+            border-radius: 50%;
+
+            .slogan-oval2 {
+                @include dimension(587.97px, 235.73px);
+                @include flex-row(center, center);
+                @include keyframe(rotate, 4s, infinite, linear);
+                border: 1px solid black;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .history-area {
+        @include dimension(100%, 1480px);
+        @include flex-col(center, center);
+
+        .cordon-area {
+            @include dimension(90%, auto);
+            @include flex-row(space-around, center);
+            padding: 120px 0;
+
+            .cordon-story {
+                @include dimension(45%, 402px);
+                @include flex-row(center, center);
+
+                ul {
+                    @include flex-col(center, flex-start);
+
+                    li {
+                        font-weight: 400;
+                        line-height: 25px;
+                        font-size: 18px;
+                    }
+
+                    li:nth-of-type(1) {
+                        font-size: 20px;
+                        line-height: 35px;
+                        margin-bottom: 26px;
+                        letter-spacing: 0.1em;
+                    }
+                }
+            }
+
+            .vl {
+                @include dimension(1px, 500px);
+                border: 1px solid $grey-2;
+            }
+
+            .cordon-graduate {
+                @include dimension(45%, 402px);
+                @include flex-row(center, center);
+
+                img {
+                    @include dimension(545px, 340px);
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+
+        .brand-area {
+            @include dimension(90%, 50%);
+            @include flex-row(space-around, center);
+            padding: 120px 0;
+
+            .brand-story {
+                @include dimension(45%, 402px);
+                @include flex-row(center, center);
+
+                ul {
+                    @include flex-col(center, flex-start);
+
+                    li {
+                        font-weight: 400;
+                        line-height: 25px;
+                        font-size: 18px;
+                    }
+
+                    li:nth-of-type(1) {
+                        font-size: 20px;
+                        line-height: 35px;
+                        margin-bottom: 26px;
+                        letter-spacing: 0.1em;
+                    }
+                }
+            }
+
+            .vl {
+                @include dimension(1px, 500px);
+                border: 1px solid $grey-2;
+            }
+
+            .brand-picture {
+                @include dimension(45%, 402px);
+                @include flex-row(center, center);
+
+                img {
+                    @include dimension(545px, 340px);
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+    }
+    #back_to_top {
+        @include dimension(30px, 30px);
+        @include flex-row(center, center);
+        position: fixed;
+        right: 53px;
+        bottom: 40px;
+        border: 1px solid $primary;
+        border-radius: 50%;
+        background-color: #8dd7cc40;
+        transition: 0.3s;
+        i {
+            font-size: 18px;
+        }
+        &:hover {
+            background-color: $primary;
+        }
+    }
+}
+// -- End of main --
+
+//1280px
+@media (max-width: 1280px) {
+    main {
+        .page-area {
+            width: 80%;
+
+            .page {
+                @include flex-row(center, center);
+            }
+        }
+
+        .banner-area {
+            width: 85%;
+            img{
+                width: 900px;
+            }
+        }
+    }
+}
+
+
+
+//1240px
+
+@media (max-width: 1240px) {
+    main {
+
+        .banner-area {
+            .banner {
+                width: 1000px;
+            }
+        }
+
+        .history-area {
+            .cordon-area {
+                .cordon-graduate {
+                    img {
+                        width: 95%;
+                    }
+                }
+            }
+
+            .brand-area {
+                .brand-picture {
+                    img {
+                        width: 95%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+//1024px
+
+@media (max-width: 1024px) {
+    main {
+        .banner-area {
+            width: 90%;
+            img {
+                width:700px;
+            }
+        }
+
+        .logo-area {
+            .logo {
+                .logo-img {
+                    width: 350px;
+                    padding: 5%;
+                }
+            }
+        }
+
+        .slogan-area {
+            ul {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+//phone-size:750px
+
+@media (max-width: 720px) {
+    main {
+        .page-area {
+            opacity: 0;
+            display: none;
+        }
+
+        .phone_title {
+            display: block;
+
+            li {
+                margin: 78px 0 112px;
+                opacity: 1;
+            }
+        }
+
+        .logo-area {
+            padding: 0;
+            .logo {
+                @include flex-col(space-between, center);
+                height: 100%;
+
+                .logo-img {
+                    padding: 0;
+                    img{
+                        @include dimension(260px, 75px);
+                    }
+                }
+
+                .logo-text {
+                    @include dimension(300px, auto);
+                    @include flex-col(flex-start, center);
+                    padding: 107px 0 112px;
+                    line-height: 24px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .banner-area {
+            @include dimension(100%, 263px);
+            margin: 0;
+            img {
+                @include dimension(100%, 100%);
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .slogan-area {
+            @include dimension(100%, 549px);
+            padding: 0;
+            ul {
+                font-size: 14px;
+                p {
+                    font-size: 16px;
+                    span {
+                        font-size: 16px;
+                    }
+                }
+                li:nth-of-type(1) {
+                    margin: 0 0 17px;
+                }
+            }
+
+            .slogan-oval1 {
+                @include dimension(371px, 134px);
+
+                .slogan-oval2 {
+                    @include dimension(338px, 135px);
+                }
+            }
+        }
+
+        .history-area {
+            @include dimension(100%, 100%);
+
+            .cordon-area {
+                @include dimension(100%, auto);
+                @include flex-col(space-around, center);
+                padding: 0 0 97px;
+                
+                .cordon-story {
+                    @include dimension(90%, 100%);
+                    @include flex-col(center, center);
+                    font-size: 16px;
+                    line-height: 24px;
+
+                    ul {
+                        @include flex-col(center, flex-start);
+                        li {
+                            font-size: 16px;
+                        }
+
+                        li:nth-of-type(1) {
+                            font-size: 18px;
+                            line-height: 35px;
+                            margin-top: 100px;
+                        }
+
+                        li:nth-last-of-type(1) {
+                            margin-bottom: 112px;
+                        }
+                    }
+                }
+
+                .vl {
+                    display: none;
+                }
+
+                .cordon-graduate {
+                    @include dimension(100%, 280px);
+                    img {
+                        @include dimension(100%, 100%);
+                    }
+                }
+            }
+
+            .brand-area {
+                @include dimension(100%, auto);
+                @include flex-col(space-around, center);
+                padding: 0;
+
+                .brand-picture {
+                    @include dimension(100%, 280px);
+                    img {
+                        @include dimension(100%, 100%);
+                    }
+                }
+
+                .brand-story {
+                    @include dimension(100%, 100%);
+                    @include flex-col(center, center);
+                    font-size: 16px;
+                    line-height: 24px;
+
+                    ul {
+                        @include flex-col(center, flex-start);
+                        li {
+                            font-size: 16px;
+                        }
+
+                        li:nth-of-type(1) {
+                            font-size: 18px;
+                            line-height: 35px;
+                            margin-top: 100px;
+                        }
+
+                        li:nth-last-of-type(1) {
+                            margin-bottom: 112px;
+                        }
+                    }
+                }
+
+                .vl {
+                    display: none;
+                }
+            }
+        }
+    }
+}
