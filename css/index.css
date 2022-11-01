@@ -241,6 +241,7 @@ main .product-showcase .see-through-style {
   height: 100px;
   border-radius: 50%;
   position: absolute;
+  z-index: 10;
 }
 main .product-showcase .see-through-style .mask {
   width: 80px;
@@ -254,6 +255,12 @@ main .product-showcase .see-through-style .mask {
 main .product-showcase .see-through-style img {
   width: 100%;
   height: 100%;
+}
+main .product-showcase .see-through-style:hover {
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+  transition-timing-function: linear;
+  transform: scale(1.5);
 }
 @media screen and (max-width: 720px) {
   main .product-showcase .see-through-style {
@@ -355,14 +362,14 @@ main .product-showcase .description .title .text {
 }
 main .product-showcase .description .title .bg {
   font-size: 70px;
-  font-weight: none;
+  font-weight: 700;
   font-family: "Noto Serif TC";
-  color: transparent;
+  color: #EEB8AF;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
-  -webkit-text-stroke: 1px black;
+  opacity: 0.7;
   letter-spacing: 0.3em;
 }
 main .product-showcase .description .title p {
@@ -383,6 +390,7 @@ main .product-showcase .description .title p {
     top: 187px;
     left: 53px;
     font-size: 18px;
+    z-index: 3;
   }
   main .product-showcase .description .title .bg {
     top: 166px;
@@ -463,11 +471,18 @@ main .new-product {
   font-size: 3rem;
   background-color: rgb(141, 215, 204);
 }
-main .new-product img {
+main .new-product .new-product-img-pc {
   width: 1034px;
   height: 624px;
   object-fit: cover;
   background-color: rgb(141, 215, 204);
+}
+main .new-product .new-product-img-phone {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: none;
 }
 main .new-product .text {
   width: calc(100% - 1034px);
@@ -477,6 +492,7 @@ main .new-product .text {
   justify-content: center;
   align-items: flex-start;
   background-color: rgb(141, 215, 204);
+  position: relative;
 }
 main .new-product .text .title {
   width: 385px;
@@ -503,13 +519,13 @@ main .new-product .text .title .bg {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  position: absolute;
-  left: 59px;
-  -webkit-text-stroke: 1px black;
-  color: transparent;
   font-size: 70px;
   font-weight: 700;
-  font-family: "Noto Serif TC", sans-serif;
+  font-family: "Noto Serif TC";
+  color: white;
+  opacity: 0.7;
+  position: absolute;
+  left: 59px;
   letter-spacing: 0.3em;
   z-index: 0;
 }
@@ -517,14 +533,15 @@ main .new-product .text p {
   width: 399px;
   height: 128px;
   position: absolute;
-  top: 351px;
+  top: 380px;
   left: 84px;
   font-size: 16px;
   color: black;
 }
 main .new-product .text button {
-  transform: translateX(84px);
-  margin-top: 100px;
+  position: absolute;
+  top: 480px;
+  left: 84px;
   padding: 12px 18px;
   font-size: 16px;
   font-weight: bold;
@@ -536,6 +553,13 @@ main .new-product .text button {
   box-shadow: gray 0px 3px 5px;
   transition: 0.3s;
   cursor: pointer;
+}
+main .new-product .text button a {
+  font-size: 14px;
+  font-weight: none;
+  font-family: "Noto Serif TC";
+  color: black;
+  text-decoration: none;
 }
 main .new-product .text button:hover {
   outline: 4px solid #8dd7cc;
@@ -575,7 +599,7 @@ main .new-product .text button:hover {
   }
   main .new-product .text .title .inner-text {
     top: 296px;
-    left: 53px;
+    left: 45px;
     color: #000;
   }
   main .new-product .text .title .bg {
@@ -598,22 +622,18 @@ main .new-product .text button:hover {
     color: #000;
     font-size: 14px;
   }
-  main .new-product .text .more-info {
-    position: absolute;
-    top: 60%;
-    left: 70%;
-  }
 }
 @media screen and (max-width: 720px) {
   main .new-product {
     width: 100%;
     height: 451px;
   }
-  main .new-product img {
+  main .new-product .new-product-img-pc {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: none;
   }
   main .new-product .text {
     width: 100%;
@@ -656,10 +676,11 @@ main .new-product .text button:hover {
     width: 300px;
     height: auto;
     position: absolute;
-    top: 357px;
-    left: 45px;
+    top: 340px;
+    left: 53px;
     color: #fff;
     font-size: 14px;
+    line-height: 22px;
   }
   main .new-product .text .more-info {
     display: none;
@@ -708,6 +729,7 @@ main .product-series .swiper-area .swiper {
   width: 100%;
   height: auto;
   padding: 0;
+  overflow: unset;
 }
 main .product-series .swiper-area .swiper .swiper-wrapper {
   position: relative;
@@ -754,30 +776,14 @@ main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-
   padding-top: 48px;
   letter-spacing: 0.2rem;
 }
-main .product-series .swiper-area .swiper .right-arrow {
-  width: 40px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  color: #000;
-  font-size: 28px;
-  background-image: linear-gradient(90deg, transparent, #fff);
+main .product-series .swiper-area .swiper .swiper-pagination {
   display: none;
-  z-index: 20;
-}
-main .product-series .swiper-area .swiper .right-arrow i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
 }
 @media screen and (max-width: 720px) {
-  main .product-series .swiper-area .swiper .right-arrow {
+  main .product-series .swiper-area .swiper .swiper-pagination {
     display: block;
+    position: absolute;
+    bottom: -20px;
   }
 }
 @media screen and (max-width: 720px) {

@@ -66,17 +66,19 @@
 				<a href="./AboutUs.html" class="nav-style nav-btn3">品牌故事</a>
 			</div>
 			<div class="social-media-area">
-				<a href="https://www.facebook.com/dessertcave0725/" target="_blank" id="facebook" class="social-style"></a>
-				<a href="https://www.instagram.com/dessertcave_taichung/?utm_medium=copy_link" target="_blank" id="instagram"
+				<a href="https://www.facebook.com/dessertcave0725/" target="_blank" id="facebook"
 					class="social-style"></a>
+				<a href="https://www.instagram.com/dessertcave_taichung/?utm_medium=copy_link" target="_blank"
+					id="instagram" class="social-style"></a>
 			</div>
 		</nav>
 		<input id="ham_icon" type="checkbox" hidden>
 		<label for="ham_icon" class="ham-icon">
 			<?xml version="1.0" encoding="utf-8"?>
 			<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-			<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-				y="0px" viewBox="0 0 170.1 170.1" style="enable-background:new 0 0 170.1 170.1;" xml:space="preserve">
+			<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+				x="0px" y="0px" viewBox="0 0 170.1 170.1" style="enable-background:new 0 0 170.1 170.1;"
+				xml:space="preserve">
 				<g>
 					<g>
 						<line class="st0" x1="36.9" y1="44.3" x2="133.2" y2="44.3" />
@@ -114,7 +116,7 @@
 			<div class="content">
 				<a href="#showcase" class="page">熱門產品</a>
 				<a href="#new" class="page">新品上市</a>
-				<a href="#new" class="page">系列產品</a>
+				<a href="#series" class="page">系列產品</a>
 				<a href="#footer" class="page">聯絡我們</a>
 			</div>
 		</div>
@@ -129,10 +131,12 @@
 				<div class="carousel__track-container">
 					<ul class="carousel__track">
 						<li class="carousel__slide current-slide">
-							<img class="carousel__image" src="./img/index/靜岡抹茶蜜蘋果.jfif" alt="">
+							<img class="carousel__image_pc" src="./img/index/靜岡抹茶蜜蘋果.jfif" alt="">
+							<img class="carousel__image_phone" src="" alt="手機">
 						</li>
 						<li class="carousel__slide">
-							<img class="carousel__image" src="./img/義式奶油檸檬塔.png" alt="">
+							<img class="carousel__image_pc" src="./img/義式奶油檸檬塔.png" alt="">
+							<img class="carousel__image_phone" src="" alt="">
 						</li>
 					</ul>
 				</div>
@@ -192,7 +196,8 @@
 
 
 		<div id="new" class="new-product">
-			<img src="./img/index/靜岡抹茶蜜蘋果.jfif" alt="New Product">
+			<img class="new-product-img-pc" src="./img/index/靜岡抹茶蜜蘋果.jfif" alt="New Product">
+			<img class="new-product-img-phone" src="" alt="New Product">
 			<div class="text">
 				<div class="title">
 					<div class="inner-text">
@@ -204,8 +209,8 @@
 					這次出場的新品是，
 					用慢火熬煮蜜蘋果，搭配靜岡抹茶慕斯以及香草卡士達，使口感更加扎實，層次充滿您的味蕾！讓您一秒到達日本靜岡，體驗最好的靜岡抹茶。
 				</p>
-				<a class="more-info" href="https://www.facebook.com/dessertcave0725/" target="_blank"><button>了解更多
-						...</button></a>
+				<button><a class="more-info" href="https://www.facebook.com/dessertcave0725/" target="_blank">了解更多
+						...</a></button>
 			</div>
 
 
@@ -239,9 +244,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="right-arrow">
-						<i class="fa-solid fa-angle-right"></i>
-					</div>
+					<div class="swiper-pagination"></div>
 				</div>
 			</div>
 		</div>
@@ -298,7 +301,11 @@
 			slidesPerView: 1,
 			spaceBetween: 114,
 			centeredSlides: true,
-			width: 289,
+			width: 289, 
+			pagination: {
+				el: ".swiper-pagination",
+				dynamicBullets: true,
+			},
 		});
 
 	</script>
