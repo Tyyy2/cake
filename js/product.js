@@ -20,7 +20,7 @@ var product_detail_content = [
       "生乳酪蘋果蛋糕使用法國進口乳酪，搭配富士蘋果切成的蘋果丁，口感清爽、滑順",
     charlotte2:
       "嚴選美國加州綠葡萄與清爽荔枝庫里完美搭配 以馬達加斯加香草慕斯作為基底，滿滿的綠葡萄與香草氣息，襯托出清爽口感",
-    lemon2:
+    lemon3:
       "嚴選屏東有機檸檬與法國愛樂薇奶油製作出的檸檬餡，再搭配軟綿義式蛋白霜與酥脆塔皮，酸甜度適中，檸檬香氣重！",
     grapelemon:
       "嚴選加州綠葡萄，搭配兩種不同口感乳酪(重乳酪、乳酪香緹)，再以奶油檸檬醬作為壓軸",
@@ -377,7 +377,7 @@ if (screen.width < 430) {
                 </div>
                 <div class="product-card">
                 <div class="img-container">
-                <img src="./img/product/product_list/furit/lemon2-phone.png" data-product="lemon2" alt="空產品">
+                <img src="./img/product/product_list/furit/lemon3-phone.png" data-product="lemon3" alt="空產品">
                 </div>
                 <div class="product-name">
                     <h3>義式奶油檸檬塔</h3>
@@ -961,7 +961,7 @@ if (screen.width < 430) {
                 </div>
                 <div class="product-card">
                 <div class="img-container">
-                <img src="./img/product/product_list/furit/lemon2.png" data-product="lemon2" alt="空產品">
+                <img src="./img/product/product_list/furit/lemon3.png" data-product="lemon3" alt="空產品">
                 </div>
                 <div class="product-name">
                     <h3>義式奶油檸檬塔</h3>

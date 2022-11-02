@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
 @import url("./_/_mixin.scss");
 @import url("./_/_variable.scss");
-@-webkit-keyframes test {}
 @keyframes test {}
 #back_to_top {
   width: 30px;

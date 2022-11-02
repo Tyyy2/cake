@@ -85,11 +85,11 @@ main {
   width: 100%;
 
   .page-area {
-    @include dimension(90%, auto);
-    // background-color: $grey-6;
+    @include flex-row(end, center);
+    padding-right: 5px;
+    width: 1100px;
     margin-top: 40px;
-
-    @include flex-row(End, center);
+   
 
     .page {
       // height: 20px;

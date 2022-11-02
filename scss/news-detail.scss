@@ -61,6 +61,13 @@ $darkgold: rgb(107, 78, 38);
   background-color: $bgcolor;
 }
 
+
+@mixin font($size, $weight, $family, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $family;
+  color: $color;
+}
 // -- End of mixin --
 a {
   text-decoration: none;
@@ -72,41 +79,54 @@ main {
   @include flex-col(center, center);
 
   .page-area {
+    @include flex-row(end, center);
+    padding-right: 5px;
     width: 1100px;
     margin-top: 40px;
 
-    li {
-      @include flex-row(flex-end, center);
+
+    .page {
+      // height: 20px;
+      // background-color: $grey-7;
+      padding: 0 5% 0;
       font-size: 16px;
-      line-height: 19px;
-      font-weight: 400;
+      font-family: "Noto Sans TC";
 
-      span {
-        padding: 0 11px;
+      a {
+        text-decoration: none;
+        font-family: "Noto Sans TC";
+        color: #000;
+        border-bottom: 2px solid transparent;
 
-        a {
-          border-bottom: 2px solid transparent;
-          margin-top: 3px;
+        // color: black;
+        &:hover {
 
-          &:hover {
-            border-bottom: 2px solid black;
-            transition: 0.1s linear;
-          }
+          border-bottom: solid #8DD7CC;
+
+          transition: 0.1s linear;
         }
       }
     }
   }
 
-  .phone_title {
-    li {
-      @include flex-row(center, center);
-      font-weight: 700;
-      margin: 118px 0 71px;
+  .hr-head {
+    @include dimension(100%, auto);
+    @include flex-row(center, center);
+    padding: 118px 0 49px;
+    margin: auto;
+    // background-color: $grey-9;
 
-      span {
-        letter-spacing: 10px;
-        padding: 18px 10px 18px 20px;
-        font-size: 18px;
+    p {
+      @include font(24px, bold, none, black);
+      font-family: "Noto Serif TC";
+      font-weight: 700;
+
+      &::before {
+        content: "———";
+      }
+
+      &::after {
+        content: "———";
       }
     }
   }
@@ -213,6 +233,7 @@ main {
 
       .phone_title {
         padding: 78px 0 46px;
+
         li {
           margin: 0;
         }
@@ -220,21 +241,25 @@ main {
 
       .news-container {
         padding: 0;
-        .news-header{
+
+        .news-header {
           border: none;
           margin: 0;
-          .title{
+
+          .title {
             @include flex-row(center, center);
             margin-bottom: 13px;
             font-size: 16px;
           }
-          .subtitle{
+
+          .subtitle {
             @include flex-row(center, center);
             padding-bottom: 46px;
             font-size: 12px;
           }
 
         }
+
         .news-banner {
           @include dimension(360px, 270px);
 
@@ -249,8 +274,8 @@ main {
           font-weight: 400;
           font-size: 16px;
           line-height: 25px;
-          .new-text-content {
-          }
+
+          .new-text-content {}
         }
       }
     }

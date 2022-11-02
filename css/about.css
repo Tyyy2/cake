@@ -1,22 +1,6 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@-webkit-keyframes rotate {
-  0% {
-    transform: rotate(360deg);
-  }
-  25% {
-    transform: rotate(270deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  75% {
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
 @keyframes rotate {
   0% {
     transform: rotate(360deg);
@@ -59,45 +43,50 @@ main {
   align-items: center;
 }
 main .page-area {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 5px;
   width: 1100px;
   margin-top: 40px;
 }
-main .page-area li {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+main .page-area .page {
+  padding: 0 5% 0;
   font-size: 16px;
-  line-height: 19px;
-  font-weight: 400;
+  font-family: "Noto Sans TC";
 }
-main .page-area li span {
-  padding: 0 11px;
-}
-main .page-area li span a {
+main .page-area .page a {
+  text-decoration: none;
+  font-family: "Noto Sans TC";
+  color: #000;
   border-bottom: 2px solid transparent;
-  margin-top: 3px;
 }
-main .page-area li span a:hover {
-
+main .page-area .page a:hover {
   border-bottom: solid #8DD7CC;
   transition: 0.1s linear;
 }
-main .phone_title {
-  display: none;
-}
-main .phone_title li {
+main .hr-head {
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 700;
-  margin: 78px 0 112px;
-  opacity: 0;
+  padding: 118px 0 49px;
+  margin: auto;
 }
-main .phone_title li span {
-  padding: 18px 10px 18px 20px;
-  font-size: 18px;
+main .hr-head p {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: none;
+  color: black;
   font-family: "Noto Serif TC";
-  letter-spacing: 10px;
+  font-weight: 700;
+}
+main .hr-head p::before {
+  content: "———";
+}
+main .hr-head p::after {
+  content: "———";
 }
 main .logo-area {
   width: 100%;
@@ -127,10 +116,8 @@ main .logo-area .logo .logo-img {
 main .logo-area .logo .logo-img img {
   width: 434px;
   height: 126px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 main .logo-area .logo .logo-text {
   width: 330px;
@@ -158,10 +145,8 @@ main .banner-area img {
   display: flex;
   justify-content: center;
   align-items: center;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 main .slogan-area {
   width: 100%;
@@ -208,14 +193,10 @@ main .slogan-area .slogan-oval1 .slogan-oval2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-animation-name: rotate;
-          animation-name: rotate;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  animation-name: rotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
   border: 1px solid black;
   border-radius: 50%;
 }
@@ -274,10 +255,8 @@ main .history-area .cordon-area .cordon-graduate {
 main .history-area .cordon-area .cordon-graduate img {
   width: 545px;
   height: 340px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 main .history-area .brand-area {
   width: 90%;
@@ -326,10 +305,8 @@ main .history-area .brand-area .brand-picture {
 main .history-area .brand-area .brand-picture img {
   width: 545px;
   height: 340px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 main #back_to_top {
   width: 30px;
@@ -443,10 +420,8 @@ main #back_to_top:hover {
     width: 100%;
     height: 100%;
     width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center;
+    object-fit: cover;
+    object-position: center;
   }
   main .slogan-area {
     width: 100%;
