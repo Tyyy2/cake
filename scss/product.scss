@@ -16,8 +16,7 @@ $darkgold: rgb(107, 78, 38);
 // -- End of variable --
 
 // -- animation
-@keyframes test {
-}
+@keyframes test {}
 
 // -- Define mixin --
 @mixin dimension($w, $h) {
@@ -86,7 +85,7 @@ main {
   width: 100%;
 
   .page-area {
-    @include dimension(100%, auto);
+    @include dimension(90%, auto);
     // background-color: $grey-6;
     margin-top: 40px;
 
@@ -107,7 +106,9 @@ main {
 
         // color: black;
         &:hover {
-          border-bottom: solid $logo_color;
+
+          border-bottom: solid #8DD7CC;
+
           transition: 0.1s linear;
         }
       }
@@ -152,6 +153,7 @@ main {
       @include font(20px, none, "Inter", black);
     }
   }
+
   @media screen and (max-width: 720px) {
     .product-sheet-area {
       @include dimension(80%, auto);
@@ -200,14 +202,14 @@ main {
 
         h3 {
           @include dimension(100%, 50px);
-          font-size: 14px;
-          font-family: "Noto Sana serif";
+          @include font(18px, none, "Inter", black);
           // color: $darkgold;
           // background-color: $grey-6;
         }
       }
     }
   }
+
   @media screen and (max-width: 720px) {
     .product-card-area {
       @include dimension(100%, auto);
@@ -223,11 +225,13 @@ main {
             object-fit: contain;
           }
         }
+
         .product-name {
           @include dimension(100%, auto);
           padding: 17px 0 46px;
           margin: 0;
           text-align: center;
+          @include font(18px, none, "Inter", black);
         }
       }
     }
@@ -237,6 +241,7 @@ main {
     @include dimension(100%, auto);
     @include flex-row(center, center);
     padding: 90px 0 110px;
+
     a {
       @include dimension(170px, 50px);
       @include flex-row(center, center);
@@ -248,12 +253,13 @@ main {
       border: none;
       border-radius: 15px;
       background-color: $secondary;
-      &:after {
-      }
-      &:hover {
-      }
+
+      // &:after {}
+
+      // &:hover {}
     }
   }
+
   @media screen and (max-width: 720px) {
     #order-btn {
       padding: 9px 0 50px;
@@ -315,34 +321,41 @@ main {
             padding: 43px 23px;
             font-size: 18px;
             font-weight: bold;
+            font-family: "Inter";
           }
 
           .product-detail-content {
             margin: 0 41px 33px;
             padding: 7px 16px 27px;
             font-size: 16px;
-            font-weight: bold;
+            // font-weight: bold;
             text-align: center;
+            font-family: "Inter";
           }
         }
       }
     }
+
     @media screen and (max-width: 720px) {
       .product-detail-card-container {
         @include dimension(300px, auto);
+
         .product-detail-card {
           .product-detail-close {
             top: 12px;
             right: 12px;
           }
+
           .product-detail-img {
             @include dimension(300px, 250px);
           }
+
           .product-detail-text {
             .product-detail-name {
               padding: 27px 0 14px;
               font-size: 14px;
             }
+
             .product-detail-content {
               margin: 0 22px 70px;
               text-align: center;
@@ -442,69 +455,100 @@ main {
 @media screen and (max-width: 720px) {
   main {
     .page-area {
-      display: none;
-    }
-    .hr-head {
-      p {
-        font-size: 18px;
-        font-weight: 700;
-      }
-    }
-    .product-sheet-area {
-      @include dimension(80%, auto);
-      justify-content: center;
-      flex-wrap: wrap;
+      width: 1100px;
+      margin-top: 40px;
 
-      .product-series {
-        @include dimension(200px, 50px);
+      li {
+        @include flex-row(flex-end, center);
+        // background-color: $grey-7;
         font-size: 16px;
-      }
-    }
-
-    #order-btn {
-      @include dimension(100%, auto);
-      @include flex-row(center, center);
-      padding: 9px 0 50px;
-      a {
-        @include dimension(125px, 35px);
-        @include flex-row(center, center);
-        text-decoration: none;
-        color: #000;
-        font-size: 20px;
+        line-height: 19px;
         font-weight: 400;
-        letter-spacing: 0.1em;
-        border: none;
-        border-radius: 10px;
-        background-color: $secondary;
-      }
-    }
 
-    .product-detail-area {
-      .product-detail-card-container {
-        @include dimension(300px, 450px);
+        * {
+          font-family: 'Noto Sans TC';
+        }
 
-        .product-detail-card {
-          .product-detail-img {
-            @include dimension(300px, 250px);
+        span {
+          padding: 0 11px;
+
+          a {
+            border-bottom: 2px solid transparent;
+            margin-top: 3px;
+
+            // color: black;
+            &:hover {
+              border-bottom: solid #8DD7CC;
+              transition: 0.1s linear;
+            }
           }
 
-          .product-detail-text {
-            @include dimension(300px, 200px);
-
-            .product-detail-name {
-              @include dimension(153px, 17px);
-              font-size: 14px;
+          .hr-head {
+            p {
+              font-size: 18px;
+              font-weight: 700;
             }
+          }
 
-            .product-detail-content {
-              @include dimension(256px, 72px);
-              font-size: 14px;
+          .product-sheet-area {
+            @include dimension(80%, auto);
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .product-series {
+              @include dimension(200px, 50px);
+              font-size: 16px;
+            }
+          }
+
+          #order-btn {
+            @include dimension(100%, auto);
+            @include flex-row(center, center);
+            padding: 9px 0 50px;
+
+            a {
+              @include dimension(125px, 35px);
+              @include flex-row(center, center);
+              text-decoration: none;
+              color: #000;
+              font-size: 20px;
+              font-weight: 400;
+              letter-spacing: 0.1em;
+              border: none;
+              border-radius: 10px;
+              background-color: $secondary;
+            }
+          }
+
+          .product-detail-area {
+            .product-detail-card-container {
+              @include dimension(300px, 450px);
+
+              .product-detail-card {
+                .product-detail-img {
+                  @include dimension(300px, 250px);
+                }
+
+                .product-detail-text {
+                  @include dimension(300px, 200px);
+
+                  .product-detail-name {
+                    @include dimension(153px, 17px);
+                    font-size: 14px;
+                  }
+
+                  .product-detail-content {
+                    @include dimension(256px, 72px);
+                    font-size: 14px;
+                  }
+                }
+              }
             }
           }
         }
       }
+
+      //--End of 720px
     }
   }
 }
-
-//--End of 720px
