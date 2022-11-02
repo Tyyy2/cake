@@ -635,6 +635,13 @@ main .new-product .text button:hover {
     object-position: center;
     display: none;
   }
+  main .new-product .new-product-img-phone {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
   main .new-product .text {
     width: 100%;
     height: 200px;
