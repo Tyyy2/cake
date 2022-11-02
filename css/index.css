@@ -1,11 +1,27 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
+@-webkit-keyframes img-rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 @keyframes img-rotate {
   0% {
     transform: rotate(360deg);
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes marquee {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-1950px);
   }
 }
 @keyframes marquee {
@@ -103,13 +119,13 @@ header nav .nav-btns .nav-style {
   color: black;
   font-weight: 400;
   font-size: 18px;
-  border-radius: 8px;
+  border-radius: 12px;
   letter-spacing: 1px;
   transition: 0.2s;
   z-index: 2;
 }
 header nav .nav-btns .nav-style:hover {
-  outline: 3px solid #8dd7cc;
+  outline: 2px solid #8dd7cc;
 }
 header nav .nav-btns .nav-style#order .order-menu {
   width: 100%;
@@ -152,8 +168,8 @@ header nav .social-media-area .social-style {
   height: 44px;
 }
 header nav .social-media-area #facebook {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-image: url("../img/NAV/社群/FB.png");
   background-position: center;
   background-size: cover;
@@ -165,8 +181,8 @@ header nav .social-media-area #facebook:hover {
   scale: 1.15;
 }
 header nav .social-media-area #instagram {
-  width: 38px;
-  height: 38px;
+  width: 28px;
+  height: 28px;
   background-image: url("../img/NAV/社群/IG.png");
   background-position: center;
   background-size: cover;
@@ -328,7 +344,8 @@ main .product-showcase .profile {
 main .product-showcase .profile img {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media screen and (max-width: 720px) {
   main .product-showcase .profile {
@@ -412,10 +429,14 @@ main .product-showcase .description .title p {
 main .product-showcase .rotate-img {
   width: 609px;
   height: 609px;
-  animation-name: img-rotate;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  -webkit-animation-name: img-rotate;
+          animation-name: img-rotate;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
   background-image: url("../img/index/檸檬塔去背.png");
   background-position: center;
   background-size: cover;
@@ -474,7 +495,8 @@ main .new-product {
 main .new-product .new-product-img-pc {
   width: 1034px;
   height: 624px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   background-color: rgb(141, 215, 204);
 }
 main .new-product .new-product-img-phone {
@@ -573,8 +595,10 @@ main .new-product .text button:hover {
   main .new-product img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
   }
   main .new-product .text {
     width: 100%;
@@ -634,6 +658,7 @@ main .new-product .text button:hover {
     object-fit: cover;
     object-position: center;
     display: none;
+
   }
   main .new-product .text {
     width: 100%;
@@ -702,10 +727,14 @@ main .product-series .marquee-area .marquee-text {
   font-weight: bold;
   font-family: none;
   color: black;
-  animation-name: marquee;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  -webkit-animation-name: marquee;
+          animation-name: marquee;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
   width: 650px;
   height: 96px;
   letter-spacing: 20px;
@@ -751,8 +780,10 @@ main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-
 main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-product-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-product-img .more-product {
   width: 289px;
@@ -822,7 +853,7 @@ main .product-series .swiper-area .swiper .swiper-pagination {
 
 footer {
   width: 100%;
-  height: 426px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -848,8 +879,8 @@ footer .footer-box .information .information_box .footer-title {
   list-style: none;
 }
 footer .footer-box .information .information_box .footer-title img {
-  width: 261px;
-  height: 87px;
+  width: 241px;
+  height: 68px;
 }
 footer .footer-box .information .information_box .text {
   padding: 20px 10px;
@@ -857,7 +888,7 @@ footer .footer-box .information .information_box .text {
 }
 footer .footer-box .information .information_box .text li {
   font-size: 14px;
-  line-height: 17px;
+  line-height: 22px;
   list-style: none;
 }
 footer .footer-box .information .information_box .text li i {
@@ -933,7 +964,7 @@ footer .copy-right {
   footer .footer-box .information .information_box .text li {
     font-weight: 400;
     font-size: 12px;
-    line-height: 15px;
+    line-height: 20px;
     color: #121212;
   }
   footer .footer-box .information .information_box .text li a {
@@ -1102,7 +1133,8 @@ header nav .social-media-area {
   header #toggle_menu .wrap .toggle-menu-content img {
     width: 130px;
     height: 130px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     scale: 0;
   }
   header #toggle_menu .wrap .toggle-menu-content .nav-links {

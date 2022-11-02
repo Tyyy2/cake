@@ -1,3 +1,4 @@
+@-webkit-keyframes test {}
 @keyframes test {}
 a {
   text-decoration: none;
@@ -72,7 +73,7 @@ main .news-container .news-header .title {
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 24px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 24px;
   line-height: 29px;
   letter-spacing: 2px;
@@ -98,8 +99,10 @@ main .news-container .news-banner {
 main .news-container .news-banner img {
   width: 962px;
   height: 600px;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 main .news-container .news-content {
   width: 962px;

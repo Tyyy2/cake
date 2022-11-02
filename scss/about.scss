@@ -145,7 +145,7 @@ main {
                     margin-top: 3px;
 
                     &:hover {
-                        border-bottom: solid black;
+                        border-bottom: solid $logo_color;
                         transition: 0.1s linear;
                     }
                 }
@@ -175,6 +175,10 @@ main {
         @include dimension(100%, auto);
         @include flex-row(center, center);
         padding: 148px 0;
+        * {
+            font-family: 'Noto Serif CJK TC';
+            font-weight: 500;
+        }
 
         .logo {
             @include dimension(900px, 126px);
@@ -220,7 +224,7 @@ main {
         position: relative;
         padding: 120px 0;
         * {
-            font-family: 'Noto Serif TC';
+            font-family: 'Noto Serif CJK TC';
         }
 
         ul {
@@ -230,7 +234,7 @@ main {
                 line-height: 24px;
                 font-size: 24px;
                 padding: 6px 0;
-                font-weight: 700;
+                font-weight: 600;
             }
 
             p:nth-last-of-type(2) {

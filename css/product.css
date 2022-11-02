@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@-webkit-keyframes test {}
 @keyframes test {}
 main {
   position: relative;
@@ -25,7 +26,7 @@ main .page-area .page a {
   border-bottom: 2px solid transparent;
 }
 main .page-area .page a:hover {
-  border-bottom: solid black;
+  border-bottom: solid rgb(141, 215, 204);
   transition: 0.1s linear;
 }
 main .hr-head {
@@ -145,7 +146,8 @@ main .product-card-area .product-card .product-name h3 {
     height: auto;
   }
   main .product-card-area .product-card .img-container img {
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   main .product-card-area .product-card .product-name {
     width: 100%;
@@ -228,8 +230,10 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
 main .product-detail-area .product-detail-card-container .product-detail-card .product-detail-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 main .product-detail-area .product-detail-card-container .product-detail-card .product-detail-text {
   width: 100%;
@@ -337,7 +341,8 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
     height: auto;
   }
   main .product-card-area .product-card .img-container img {
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 @media screen and (max-width: 720px) {

@@ -115,7 +115,7 @@ main {
 
           // color: black;
           &:hover {
-            border-bottom: solid black;
+            border-bottom: solid $logo_color;
             transition: 0.1s linear;
           }
         }
@@ -159,6 +159,8 @@ main {
           @include flex-row(center, center);
           background-color: $logo_color;
           transform: translate(50%, 0);
+          font-family: "Noto Serif TC";
+          font-weight: 500;
         }
 
         .news-text {
@@ -171,7 +173,7 @@ main {
             margin-bottom: 32px;
             font-size: 18px;
             line-height: 22px;
-            font-weight: 600;
+            font-weight: 500;
           }
 
           .new-text-content {
