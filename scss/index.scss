@@ -333,6 +333,10 @@ main {
 			}
 
 			&:hover {
+				.mask {
+					display: none;
+				}
+
 				@include transition(0.3s, 0s, linear);
 				transform: scale(1.5);
 

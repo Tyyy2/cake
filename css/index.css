@@ -262,6 +262,9 @@ main .product-showcase .see-through-style:hover {
   transition-timing-function: linear;
   transform: scale(1.5);
 }
+main .product-showcase .see-through-style:hover .mask {
+  display: none;
+}
 @media screen and (max-width: 720px) {
   main .product-showcase .see-through-style {
     display: none;
