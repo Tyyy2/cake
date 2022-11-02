@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("");
 @keyframes rotate {
   0% {
     transform: rotate(360deg);
@@ -95,7 +96,7 @@ main .logo-area {
   padding: 148px 0;
 }
 main .logo-area * {
-  font-family: "Noto Serif CJK TC";
+  font-family: "Noto Serif TC";
   font-weight: 500;
 }
 main .logo-area .logo {
@@ -120,14 +121,19 @@ main .logo-area .logo .logo-img img {
 main .logo-area .logo .logo-text {
   width: 330px;
   height: 120px;
-  color: #121212;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  line-height: 30px;
   font-size: 20px;
+  font-weight: 400;
+  font-family: "Noto Serif CJK TC";
+  color: #121212;
+  line-height: 30px;
   letter-spacing: 0.1em;
+}
+main .logo-area .logo .logo-text li {
+  font-family: "Noto Serif TC", "Noto Sans Japanese";
 }
 main .banner-area {
   width: 1190px;
