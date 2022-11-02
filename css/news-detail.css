@@ -1,3 +1,4 @@
+@-webkit-keyframes test {}
 @keyframes test {}
 a {
   text-decoration: none;
@@ -98,8 +99,10 @@ main .news-container .news-banner {
 main .news-container .news-banner img {
   width: 962px;
   height: 600px;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 main .news-container .news-content {
   width: 962px;

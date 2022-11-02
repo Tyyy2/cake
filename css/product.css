@@ -1,12 +1,13 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@-webkit-keyframes test {}
 @keyframes test {}
 main {
   position: relative;
   width: 100%;
 }
 main .page-area {
-  width: 100%;
+  width: 90%;
   height: auto;
   margin-top: 40px;
   display: flex;
@@ -25,7 +26,7 @@ main .page-area .page a {
   border-bottom: 2px solid transparent;
 }
 main .page-area .page a:hover {
-  border-bottom: solid black;
+  border-bottom: solid #8DD7CC;
   transition: 0.1s linear;
 }
 main .hr-head {
@@ -125,8 +126,10 @@ main .product-card-area .product-card .product-name {
 main .product-card-area .product-card .product-name h3 {
   width: 100%;
   height: 50px;
-  font-size: 14px;
-  font-family: "Noto Sana serif";
+  font-size: 18px;
+  font-weight: none;
+  font-family: "Inter";
+  color: black;
 }
 @media screen and (max-width: 720px) {
   main .product-card-area {
@@ -145,7 +148,8 @@ main .product-card-area .product-card .product-name h3 {
     height: auto;
   }
   main .product-card-area .product-card .img-container img {
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   main .product-card-area .product-card .product-name {
     width: 100%;
@@ -153,6 +157,10 @@ main .product-card-area .product-card .product-name h3 {
     padding: 17px 0 46px;
     margin: 0;
     text-align: center;
+    font-size: 18px;
+    font-weight: none;
+    font-family: "Inter";
+    color: black;
   }
 }
 main #order-btn {
@@ -228,8 +236,10 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
 main .product-detail-area .product-detail-card-container .product-detail-card .product-detail-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 main .product-detail-area .product-detail-card-container .product-detail-card .product-detail-text {
   width: 100%;
@@ -246,13 +256,14 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
   padding: 43px 23px;
   font-size: 18px;
   font-weight: bold;
+  font-family: "Inter";
 }
 main .product-detail-area .product-detail-card-container .product-detail-card .product-detail-text .product-detail-content {
   margin: 0 41px 33px;
   padding: 7px 16px 27px;
   font-size: 16px;
-  font-weight: bold;
   text-align: center;
+  font-family: "Inter";
 }
 @media screen and (max-width: 720px) {
   main .product-detail-area .product-detail-card-container {
@@ -337,29 +348,53 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
     height: auto;
   }
   main .product-card-area .product-card .img-container img {
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 @media screen and (max-width: 720px) {
   main .page-area {
-    display: none;
+    width: 1100px;
+    margin-top: 40px;
   }
-  main .hr-head p {
+  main .page-area li {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+  }
+  main .page-area li * {
+    font-family: "Noto Sans TC";
+  }
+  main .page-area li span {
+    padding: 0 11px;
+  }
+  main .page-area li span a {
+    border-bottom: 2px solid transparent;
+    margin-top: 3px;
+  }
+  main .page-area li span a:hover {
+    border-bottom: solid #8DD7CC;
+    transition: 0.1s linear;
+  }
+  main .page-area li span .hr-head p {
     font-size: 18px;
     font-weight: 700;
   }
-  main .product-sheet-area {
+  main .page-area li span .product-sheet-area {
     width: 80%;
     height: auto;
     justify-content: center;
     flex-wrap: wrap;
   }
-  main .product-sheet-area .product-series {
+  main .page-area li span .product-sheet-area .product-series {
     width: 200px;
     height: 50px;
     font-size: 16px;
   }
-  main #order-btn {
+  main .page-area li span #order-btn {
     width: 100%;
     height: auto;
     display: flex;
@@ -367,7 +402,7 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
     align-items: center;
     padding: 9px 0 50px;
   }
-  main #order-btn a {
+  main .page-area li span #order-btn a {
     width: 125px;
     height: 35px;
     display: flex;
@@ -382,24 +417,24 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
     border-radius: 10px;
     background-color: #eeb8af;
   }
-  main .product-detail-area .product-detail-card-container {
+  main .page-area li span .product-detail-area .product-detail-card-container {
     width: 300px;
     height: 450px;
   }
-  main .product-detail-area .product-detail-card-container .product-detail-card .product-detail-img {
+  main .page-area li span .product-detail-area .product-detail-card-container .product-detail-card .product-detail-img {
     width: 300px;
     height: 250px;
   }
-  main .product-detail-area .product-detail-card-container .product-detail-card .product-detail-text {
+  main .page-area li span .product-detail-area .product-detail-card-container .product-detail-card .product-detail-text {
     width: 300px;
     height: 200px;
   }
-  main .product-detail-area .product-detail-card-container .product-detail-card .product-detail-text .product-detail-name {
+  main .page-area li span .product-detail-area .product-detail-card-container .product-detail-card .product-detail-text .product-detail-name {
     width: 153px;
     height: 17px;
     font-size: 14px;
   }
-  main .product-detail-area .product-detail-card-container .product-detail-card .product-detail-text .product-detail-content {
+  main .page-area li span .product-detail-area .product-detail-card-container .product-detail-card .product-detail-text .product-detail-content {
     width: 256px;
     height: 72px;
     font-size: 14px;

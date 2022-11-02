@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
 @import url("./_/_mixin.scss");
 @import url("./_/_variable.scss");
+@-webkit-keyframes test {}
 @keyframes test {}
 * {
   box-sizing: border-box;
@@ -337,7 +338,8 @@ header nav .social-media-area {
   header #toggle_menu .wrap .toggle-menu-content img {
     width: 130px;
     height: 130px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     scale: 0;
   }
   header #toggle_menu .wrap .toggle-menu-content .nav-links {
