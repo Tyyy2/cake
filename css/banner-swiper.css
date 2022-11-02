@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .carousel {
   width: 100%;
   height: 800px;
@@ -10,10 +11,27 @@
   position: relative;
 }
 
-.carousel__image {
+.carousel__image_pc {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.carousel__image_phone {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+@media screen and (max-width:720px) {
+  .carousel__image_pc {
+    display: none;
+  }
+
+  .carousel__image_phone {
+    display: block;
+  }
 }
 
 .carousel__track-container {
@@ -100,6 +118,7 @@
   .carousel {
     height: 851px;
   }
+
   /* .carousel__button--left, .carousel__button--right {
     display: none;
   } */

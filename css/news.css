@@ -80,6 +80,8 @@ main .news-container .news-card .news-info .news-date {
   align-items: center;
   background-color: rgb(141, 215, 204);
   transform: translate(50%, 0);
+  font-family: "Noto Serif TC";
+  font-weight: 500;
 }
 main .news-container .news-card .news-info .news-text {
   width: 453px;
@@ -92,7 +94,7 @@ main .news-container .news-card .news-info .news-text .news-text-title {
   margin-bottom: 32px;
   font-size: 18px;
   line-height: 22px;
-  font-weight: 600;
+  font-weight: 500;
 }
 main .news-container .news-card .news-info .news-text .new-text-content {
   width: 440px;

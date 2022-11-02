@@ -27,7 +27,7 @@ main .page-area .page a {
 }
 main .page-area .page a:hover {
   border-bottom: solid #8DD7CC;
-  transition: 0.1s linear;
+
 }
 main .hr-head {
   width: 100%;

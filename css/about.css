@@ -78,6 +78,7 @@ main .page-area li span a {
   margin-top: 3px;
 }
 main .page-area li span a:hover {
+
   border-bottom: solid #8DD7CC;
   transition: 0.1s linear;
 }
@@ -105,6 +106,10 @@ main .logo-area {
   justify-content: center;
   align-items: center;
   padding: 148px 0;
+}
+main .logo-area * {
+  font-family: "Noto Serif CJK TC";
+  font-weight: 500;
 }
 main .logo-area .logo {
   width: 900px;
@@ -168,7 +173,7 @@ main .slogan-area {
   padding: 120px 0;
 }
 main .slogan-area * {
-  font-family: "Noto Serif TC";
+  font-family: "Noto Serif CJK TC";
 }
 main .slogan-area ul {
   position: absolute;
@@ -177,7 +182,7 @@ main .slogan-area ul p {
   line-height: 24px;
   font-size: 24px;
   padding: 6px 0;
-  font-weight: 700;
+  font-weight: 600;
 }
 main .slogan-area ul p:nth-last-of-type(2) span {
   color: #eeb8af;
