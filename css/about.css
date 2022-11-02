@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  25% {
+    transform: rotate(270deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 @keyframes rotate {
   0% {
     transform: rotate(360deg);
@@ -61,7 +78,7 @@ main .page-area li span a {
   margin-top: 3px;
 }
 main .page-area li span a:hover {
-  border-bottom: solid black;
+  border-bottom: solid rgb(141, 215, 204);
   transition: 0.1s linear;
 }
 main .phone_title {
@@ -89,6 +106,10 @@ main .logo-area {
   align-items: center;
   padding: 148px 0;
 }
+main .logo-area * {
+  font-family: "Noto Serif CJK TC";
+  font-weight: 500;
+}
 main .logo-area .logo {
   width: 900px;
   height: 126px;
@@ -105,8 +126,10 @@ main .logo-area .logo .logo-img {
 main .logo-area .logo .logo-img img {
   width: 434px;
   height: 126px;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 main .logo-area .logo .logo-text {
   width: 330px;
@@ -134,8 +157,10 @@ main .banner-area img {
   display: flex;
   justify-content: center;
   align-items: center;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 main .slogan-area {
   width: 100%;
@@ -147,7 +172,7 @@ main .slogan-area {
   padding: 120px 0;
 }
 main .slogan-area * {
-  font-family: "Noto Serif TC";
+  font-family: "Noto Serif CJK TC";
 }
 main .slogan-area ul {
   position: absolute;
@@ -156,7 +181,7 @@ main .slogan-area ul p {
   line-height: 24px;
   font-size: 24px;
   padding: 6px 0;
-  font-weight: 700;
+  font-weight: 600;
 }
 main .slogan-area ul p:nth-last-of-type(2) span {
   color: #eeb8af;
@@ -182,10 +207,14 @@ main .slogan-area .slogan-oval1 .slogan-oval2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation-name: rotate;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
   border: 1px solid black;
   border-radius: 50%;
 }
@@ -244,8 +273,10 @@ main .history-area .cordon-area .cordon-graduate {
 main .history-area .cordon-area .cordon-graduate img {
   width: 545px;
   height: 340px;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 main .history-area .brand-area {
   width: 90%;
@@ -294,8 +325,10 @@ main .history-area .brand-area .brand-picture {
 main .history-area .brand-area .brand-picture img {
   width: 545px;
   height: 340px;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 main #back_to_top {
   width: 30px;
@@ -409,8 +442,10 @@ main #back_to_top:hover {
     width: 100%;
     height: 100%;
     width: 100%;
-    object-fit: cover;
-    object-position: center;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
   }
   main .slogan-area {
     width: 100%;

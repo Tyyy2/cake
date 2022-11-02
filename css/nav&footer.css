@@ -2,12 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
 @import url("./_/_mixin.scss");
 @import url("./_/_variable.scss");
+@-webkit-keyframes test {}
 @keyframes test {}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Noto Serif TC", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 html {
@@ -97,13 +98,13 @@ header nav .nav-btns .nav-style {
   font-weight: 400;
   font-size: 18px;
   font-family: "Noto Sans TC";
-  border-radius: 8px;
+  border-radius: 12px;
   letter-spacing: 1px;
   transition: 0.2s;
   z-index: 2;
 }
 header nav .nav-btns .nav-style:hover {
-  outline: 3px solid #8dd7cc;
+  outline: 2px solid white;
 }
 header nav .nav-btns .nav-style#order .order-menu {
   width: 100%;
@@ -145,8 +146,8 @@ header nav .social-media-area .social-style {
   height: 44px;
 }
 header nav .social-media-area #facebook {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-image: url("../img/NAV/社群/FB.png");
   background-position: center;
   background-size: cover;
@@ -158,8 +159,8 @@ header nav .social-media-area #facebook:hover {
   scale: 1.15;
 }
 header nav .social-media-area #instagram {
-  width: 38px;
-  height: 38px;
+  width: 28px;
+  height: 28px;
   background-image: url("../img/NAV/社群/IG.png");
   background-position: center;
   background-size: cover;
@@ -337,7 +338,8 @@ header nav .social-media-area {
   header #toggle_menu .wrap .toggle-menu-content img {
     width: 130px;
     height: 130px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     scale: 0;
   }
   header #toggle_menu .wrap .toggle-menu-content .nav-links {
@@ -402,7 +404,7 @@ header #toggle_menu .wrap .toggle-menu-content .ssn .instagram {
 }
 footer {
   width: 100%;
-  height: 426px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -425,8 +427,8 @@ footer .footer-box .information .information_box {
   font-size: 14px;
 }
 footer .footer-box .information .information_box .footer-title img {
-  width: 261px;
-  height: 87px;
+  width: 241px;
+  height: 68px;
 }
 footer .footer-box .information .information_box .text {
   padding: 20px 10px;
@@ -434,7 +436,7 @@ footer .footer-box .information .information_box .text {
 }
 footer .footer-box .information .information_box .text li {
   font-size: 14px;
-  line-height: 17px;
+  line-height: 22px;
 }
 footer .footer-box .information .information_box .text li i {
   padding-right: 8px;
@@ -509,7 +511,7 @@ footer .copy-right {
   footer .footer-box .information .information_box .text li {
     font-weight: 400;
     font-size: 12px;
-    line-height: 15px;
+    line-height: 20px;
     color: #121212;
   }
   footer .footer-box .information .information_box .text li:nth-of-type(1) i {

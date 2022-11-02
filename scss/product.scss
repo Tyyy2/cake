@@ -107,7 +107,7 @@ main {
 
         // color: black;
         &:hover {
-          border-bottom: solid black;
+          border-bottom: solid $logo_color;
           transition: 0.1s linear;
         }
       }
