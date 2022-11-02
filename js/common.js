@@ -15,12 +15,12 @@ window.addEventListener('scroll', () => {
     header.classList.remove('header-show');
     LOGO.classList.remove('logo-hide');
     PAGI.classList.remove('pagination-span');
-  }else if (window.scrollY > currentTop) {
+  } else if (window.scrollY > currentTop) {
     header.classList.remove('header-show');
     header.classList.add('header-hide');
     LOGO.classList.add('logo-hide');
     PAGI.classList.add('pagination-span');
-  }else if (window.scrollY < currentTop) {
+  } else if (window.scrollY < currentTop) {
     header.classList.remove('header-hide');
     header.classList.add('header-show');
     LOGO.classList.remove('logo-hide');
@@ -38,9 +38,9 @@ TOTOP.style = 'display: none;';
 window.addEventListener('scroll', () => {
   if (window.scrollY < window.innerHeight) {
     TOTOP.style = 'display: none;';
-  }else if (window.scrollY < body.clientHeight-FOOTER.clientHeight-window.innerHeight) {
+  } else if (window.scrollY < body.clientHeight - FOOTER.clientHeight - window.innerHeight) {
     TOTOP.style = 'position: fixed; right: 40px; bottom: 92px;';
-  }else if (window.scrollY > body.clientHeight-FOOTER.clientHeight-window.innerHeight) {
+  } else if (window.scrollY > body.clientHeight - FOOTER.clientHeight - window.innerHeight) {
     TOTOP.style = 'position: absolute; right: 40px; bottom: 92px;';
   }
 });
