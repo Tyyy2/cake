@@ -94,13 +94,14 @@ main {
 
   .page-area {
     @include flex-row(end, center);
-    padding-right: 5px;
     width: 1100px;
     margin-top: 40px;
+
+
     .page {
       // height: 20px;
       // background-color: $grey-7;
-      padding: 0 5% 0;
+
       font-size: 16px;
       font-family: "Noto Sans TC";
 
