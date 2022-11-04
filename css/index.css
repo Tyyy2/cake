@@ -572,12 +572,19 @@ main .new-product .text button:hover {
     display: none;
   }
 }
-@media screen and (min-width: 721px) and (max-width: 1240px) {
-  main .new-product img {
+@media screen and (min-width: 1241px) and (max-width: 1500px) {
+  main .new-product .new-product-img-pc {
+    width: 800px;
+    height: 624px;
+  }
+}
+@media screen and (min-width: 721px) and (max-width: 1300px) {
+  main .new-product {
+    background-color: unset;
+  }
+  main .new-product .new-product-img-pc {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    height: 624px;
   }
   main .new-product .text {
     width: 100%;
@@ -598,10 +605,10 @@ main .new-product .text button:hover {
     height: 44px;
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 60%;
   }
   main .new-product .text .title .inner-text {
-    top: 296px;
+    top: 315px;
     left: 45px;
     color: #000;
   }
@@ -620,7 +627,7 @@ main .new-product .text button:hover {
     height: auto;
     position: absolute;
     top: 357px;
-    left: 50%;
+    left: 60%;
     padding: 0 45px;
     color: #000;
     font-size: 14px;

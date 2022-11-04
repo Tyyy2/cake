@@ -646,12 +646,20 @@ main {
 		}
 	}
 
-	@media screen and (min-width: 721px) and (max-width: 1240px) {
+	@media screen and (min-width: 1241px) and (max-width:1500px) {
 		.new-product {
-			img {
-				@include dimension(100%, 100%);
-				object-fit: cover;
-				object-position: center;
+			.new-product-img-pc {
+				@include dimension(800px, 624px);
+			}
+		}
+	}
+
+	@media screen and (min-width: 721px) and (max-width: 1300px) {
+		.new-product {
+			background-color: unset;
+
+			.new-product-img-pc {
+				@include dimension(100%, 624px);
 			}
 
 			.text {
@@ -668,10 +676,10 @@ main {
 					@include dimension(380px, 44px);
 					position: absolute;
 					top: 0;
-					left: 50%;
+					left: 60%;
 
 					.inner-text {
-						top: 296px;
+						top: 315px;
 						left: 45px;
 						color: #000;
 					}
@@ -691,7 +699,7 @@ main {
 					@include dimension(320px, auto);
 					position: absolute;
 					top: 357px;
-					left: 50%;
+					left: 60%;
 					padding: 0 45px;
 					color: #000;
 					font-size: 14px;
